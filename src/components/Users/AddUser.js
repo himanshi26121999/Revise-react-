@@ -3,7 +3,7 @@ import Card from "../UI/Card";
 import Button from "../UI/Button";
 import "./AddUser.css";
 
-const AddUser = () => {
+const AddUser = (props) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
 
@@ -19,7 +19,7 @@ const AddUser = () => {
     if(enteredName.trim().length === 0 || enteredAge.trim().length === 0 || enteredAge<=0){
       return;
     }
-    console.log(enteredName,enteredAge);
+    props.onAddUser(enteredName,enteredAge);
     setEnteredName(""); setEnteredAge("");
   };
 
